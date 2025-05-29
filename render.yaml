@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: foi-website
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn foi_tech.wsgi:application
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: foi_tech.settings
+      - fromDatabase:
+          name: your-postgres-db-name
+          property: connectionString
+        key: DATABASE_URL
