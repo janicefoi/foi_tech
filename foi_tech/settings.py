@@ -31,8 +31,8 @@ SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 RENDER = os.environ.get('RENDER') == 'true'
 
+ALLOWED_HOSTS = ['foitechnologies.com', 'www.foitechnologies.com', 'foi-tech.onrender.com']
 
-ALLOWED_HOSTS = ['foitechnologies.com', 'www.foitechnologies.com',]
 
 
 
