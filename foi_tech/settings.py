@@ -29,7 +29,8 @@ DEBUG = False
 SECURE_SSL_REDIRECT = True
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
-RENDER = os.environ.get('RENDER', False)
+RENDER = os.environ.get('RENDER') == 'true'
+
 
 ALLOWED_HOSTS = ['foitechnologies.com', 'www.foitechnologies.com',]
 
@@ -124,18 +125,19 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 # Add these settings at the end of the file
-STATIC_URL = 'static/'
-
-
+STATIC_URL = '/static/'
 # Location where collectstatic will put files
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
 # Required for Render
-if os.getenv('RENDER'):
+if RENDER:
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
     MIDDLEWARE.insert(1, 'whitenoise.middleware.WhiteNoiseMiddleware')
+MEDIA_URL = '/media/'
 
-MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 # Default primary key field type
