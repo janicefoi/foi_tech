@@ -29,9 +29,10 @@ DEBUG = False
 SECURE_SSL_REDIRECT = True
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
+RENDER = os.environ.get('RENDER', False)
 
+ALLOWED_HOSTS = ['foitechnologies.com', 'www.foitechnologies.com',]
 
-ALLOWED_HOSTS = ['foitechnologies.com', '.onrender.com']
 
 
 
@@ -125,8 +126,14 @@ USE_TZ = True
 # Add these settings at the end of the file
 STATIC_URL = 'static/'
 
-STATIC_ROOT = BASE_DIR / 'staticfiles'
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+# Location where collectstatic will put files
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Required for Render
+if os.getenv('RENDER'):
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+    MIDDLEWARE.insert(1, 'whitenoise.middleware.WhiteNoiseMiddleware')
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'
