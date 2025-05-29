@@ -1,0 +1,177 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+
+{% block content %}
+<!-- Hero Section -->
+<section class="min-h-screen flex items-center justify-center relative overflow-hidden hero-section overflow-x-hidden" style="transform-style: preserve-3d;">
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 w-full bg-black/90 backdrop-blur-sm z-50 py-4 px-6 border-b border-gray-800">
+    <div class="container mx-auto flex justify-between items-center">
+        <!-- Logo/Brand -->
+        <a href="#" class="flex items-center gap-3 hover:text-[--color-gold] transition-colors">
+            <img src="{% static 'img/logo.jpeg' %}" alt="Foi Technologies Logo" class="h-16 w-auto">
+            <span class="text-2xl font-bold text-white">Foi Technologies</span>
+        </a>
+
+        <!-- Navigation Links -->
+        <div class="flex items-center gap-6">
+            <a href="{% url 'home' %}" class="text-gray-300 hover:text-[--color-gold] transition-colors">Home</a>
+            <a href="{% url 'products' %}" class="text-gray-300 hover:text-[--color-gold] transition-colors">Products</a>
+            <a href="{% url 'about' %}" class="text-gray-300 hover:text-[--color-gold] transition-colors">About</a>
+            <a href="{% url 'contact' %}" class="text-gray-300 hover:text-[--color-gold] transition-colors">Contact</a>
+            <button class="bg-[--color-gold] text-black px-6 py-2 rounded-full hover:bg-yellow-400 transition-colors font-semibold ml-4">
+                Partner With Us
+            </button>
+        </div>
+    </div>
+    </nav>
+
+    <!-- Background layer -->
+    <div class="absolute inset-0 hero-bg">
+        <div class="absolute inset-0 bg-gradient-to-r from-black via-[--color-gold]/10 to-black animate-gradient"></div>
+        <!-- Animated shapes with lower z-index -->
+        <div class="shapes-container absolute inset-0 pointer-events-none" style="z-index: 1;">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+    </div>
+
+    <!-- Content layer with higher z-index -->
+    <div class="container mx-auto px-4 md:px-6 text-center relative max-w-screen-xl" style="z-index: 2;">
+        <h1 class="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-[--color-gold] to-yellow-500">
+            Partner With Foi Technologies
+        </h1>
+        <p class="text-2xl md:text-3xl mb-8 text-white opacity-90 max-w-3xl mx-auto">
+            Join us in revolutionizing the African SaaS market. Together, we'll build innovative solutions that drive digital transformation.
+        </p>
+        <a href="#contact-form" class="bg-[--color-gold] text-black px-8 py-4 rounded-full hover:bg-yellow-400 transition-all transform hover:scale-105 font-semibold text-lg shadow-lg inline-block">
+            Become a Partner Today
+        </a>
+    </div>
+</section>
+
+<!-- Contact Form Section -->
+<section class="min-h-screen bg-black/95 relative contact-form-section flex items-center">
+    <canvas class="particle-network"></canvas>
+    <div class="container mx-auto px-4 max-w-3xl">
+        <h2 class="text-3xl font-bold text-center mb-12 text-[--color-gold]">Send Us a Message</h2>
+        <div class="bg-black/50 p-8 rounded-xl border border-[--color-gold]/20">
+            <form class="space-y-6" method="POST" action="{% url 'contact' %}">
+                {% csrf_token %}
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-[--color-gold] mb-2" for="name">Name</label>
+                        <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-lg bg-black/50 border border-[--color-gold]/20 focus:border-[--color-gold] text-white transition-all duration-300">
+                    </div>
+                    <div>
+                        <label class="block text-[--color-gold] mb-2" for="company">Company</label>
+                        <input type="text" id="company" name="company" required class="w-full px-4 py-3 rounded-lg bg-black/50 border border-[--color-gold]/20 focus:border-[--color-gold] text-white transition-all duration-300">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-[--color-gold] mb-2" for="email">Email</label>
+                    <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-lg bg-black/50 border border-[--color-gold]/20 focus:border-[--color-gold] text-white transition-all duration-300">
+                </div>
+                <div>
+                    <label class="block text-[--color-gold] mb-2" for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 rounded-lg bg-black/50 border border-[--color-gold]/20 focus:border-[--color-gold] text-white transition-all duration-300"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-[--color-gold] text-black px-6 py-4 rounded-lg hover:bg-yellow-400 transition-all transform hover:scale-[1.02] font-semibold text-lg">
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Info & Schedule Section -->
+<section class="min-h-screen bg-black/95 relative contact-info-section flex items-center">
+    <canvas class="particle-network"></canvas>
+    <div class="container mx-auto px-4 max-w-6xl">
+        <div class="grid md:grid-cols-2 gap-12">
+            <!-- Contact Info -->
+            <div class="bg-black/50 p-8 rounded-xl border border-[--color-gold]/20">
+                <h2 class="text-2xl font-bold mb-8 text-[--color-gold]">Contact Information</h2>
+                <div class="space-y-6">
+                    <div class="flex items-center gap-3">
+                        <span class="text-[--color-gold]">📨</span>
+                        <a href="mailto:contact@foitechnologies.com" class="text-gray-300 hover:text-[--color-gold] transition-colors">contact@foitechnologies.com</a>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="text-[--color-gold]">📍</span>
+                        <span class="text-gray-300">Remote-Friendly | Global Operations</span>
+                    </div>
+                    <div class="mt-8">
+                        <h3 class="text-xl font-bold mb-4 text-[--color-gold]">Working Hours</h3>
+                        <p class="text-gray-300">
+                            Monday - Friday<br>
+                            9:00 AM - 5:00 PM (WAT)
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Schedule Meeting -->
+            <div class="bg-black/50 p-8 rounded-xl border border-[--color-gold]/20 flex flex-col justify-center items-center text-center">
+                <h2 class="text-2xl font-bold mb-6 text-[--color-gold]">Schedule a Meeting</h2>
+                <p class="text-gray-300 mb-8">Let's discuss how we can work together to achieve your goals.</p>
+                <a href="#" class="inline-block bg-[--color-gold] text-black px-8 py-4 rounded-lg hover:bg-yellow-400 transition-all transform hover:scale-105 font-semibold">
+                    📆 Book a Time
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-black/95 text-gray-300 py-12">
+    <div class="container mx-auto px-4">
+        <!-- Navigation Links -->
+        <div class="flex flex-wrap justify-center mb-8 gap-6">
+            <a href="{% url 'home' %}" class="hover:text-[--color-gold] transition-colors">Home</a>
+            <a href="{% url 'about' %}" class="hover:text-[--color-gold] transition-colors">About</a>
+            <a href="{% url 'products' %}" class="hover:text-[--color-gold] transition-colors">Products</a>
+            <a href="{% url 'vision' %}" class="hover:text-[--color-gold] transition-colors">Roadmap</a>
+            <a href="{% url 'contact' %}" class="hover:text-[--color-gold] transition-colors">Contact</a>
+        </div>
+
+        <!-- Subscribe Section -->
+        <div class="text-center mb-8">
+            <h3 class="text-2xl font-semibold mb-4">📩 Subscribe for Updates</h3>
+            <form class="max-w-md mx-auto flex gap-2">
+                <input type="email" placeholder="Enter your email" class="flex-1 px-4 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-[--color-gold]">
+                <button type="submit" class="bg-[--color-gold] text-black px-6 py-2 rounded-lg hover:bg-yellow-400 transition-colors font-semibold">Subscribe</button>
+            </form>
+        </div>
+
+        <!-- Legal Links -->
+        <div class="flex justify-center gap-6 mb-6 text-sm">
+            <a href="#privacy" class="hover:text-[--color-gold] transition-colors">🛡️ Privacy Policy</a>
+            <a href="#terms" class="hover:text-[--color-gold] transition-colors">Terms of Service</a>
+        </div>
+
+        <!-- Copyright -->
+        <div class="text-center text-sm text-gray-500">
+            © 2025 Foi Technologies. All rights reserved.
+        </div>
+    </div>
+</footer>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="{% static 'js/home.js' %}"></script>
+
+{% if messages %}
+<div class="mt-4">
+    {% for message in messages %}
+        <div class="{% if message.tags == 'success' %}bg-green-100 text-green-800{% else %}bg-red-100 text-red-800{% endif %} p-4 rounded-lg">
+            {{ message }}
+        </div>
+    {% endfor %}
+</div>
+{% endif %}
+{% endblock %}

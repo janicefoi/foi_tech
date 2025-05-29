@@ -1,0 +1,153 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="min-h-screen flex items-center justify-center relative overflow-hidden hero-section overflow-x-hidden" style="transform-style: preserve-3d;">
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 w-full bg-black/90 backdrop-blur-sm z-50 py-4 px-6 border-b border-gray-800">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Logo/Brand -->
+            <a href="#" class="flex items-center gap-3 hover:text-[--color-gold] transition-colors">
+                <img src="{% static 'img/logo.jpeg' %}" alt="Foi Technologies Logo" class="h-16 w-auto">
+                <span class="text-2xl font-bold text-white">Foi Technologies</span>
+            </a>
+
+            <!-- Navigation Links -->
+            <div class="flex items-center gap-6">
+                <a href="{% url 'home' %}" class="text-gray-300 hover:text-[--color-gold] transition-colors">Home</a>
+                <a href="{% url 'products' %}" class="text-gray-300 hover:text-[--color-gold] transition-colors">Products</a>
+                <a href="{% url 'about' %}" class="text-gray-300 hover:text-[--color-gold] transition-colors">About</a>
+                <a href="{% url 'contact' %}" class="text-gray-300 hover:text-[--color-gold] transition-colors">Contact</a>
+                <button class="bg-[--color-gold] text-black px-6 py-2 rounded-full hover:bg-yellow-400 transition-colors font-semibold ml-4">
+                    Partner With Us
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="particle-network"></div>
+    <!-- Background layer -->
+    <div class="absolute inset-0 hero-bg">
+        <div class="absolute inset-0 bg-gradient-to-r from-black via-[--color-gold]/10 to-black animate-gradient"></div>
+        <!-- Replace shapes with tech-themed floating elements -->
+        <div class="tech-elements-container absolute inset-0 pointer-events-none" style="z-index: 1;">
+            <div class="tech-element code-block"></div>
+            <div class="tech-element circuit"></div>
+            <div class="tech-element binary"></div>
+            <div class="tech-element chip"></div>
+        </div>
+    </div>
+    
+    <!-- Content layer with higher z-index -->
+    <div class="container mx-auto px-4 md:px-6 text-center relative max-w-screen-xl z-[2]">
+        <div class="flex flex-col items-center justify-center min-h-screen">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-[--color-gold] to-yellow-500">
+                📍 Vision & Roadmap
+            </h1>
+            <p class="text-2xl md:text-3xl mb-8 max-w-3xl mx-auto text-white">
+                2025–2027 Strategic Vision
+            </p>
+            <p class="text-xl md:text-2xl mb-16 max-w-3xl mx-auto text-gray-300">
+                Lead the African SaaS market by launching category-defining platforms in underserved sectors, while expanding globally through cloud-native technology and strategic alliances.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Strategic Goals Section -->
+<section class="py-24 bg-black/95">
+    <div class="container mx-auto px-4">
+        <h2 class="text-4xl md:text-5xl font-bold mb-16 text-center text-[--color-gold]">Key Goals</h2>
+        
+        <div class="max-w-4xl mx-auto relative">
+            <!-- Vertical Line -->
+            <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-[--color-gold] to-transparent"></div>
+            
+            <!-- Goal 1 -->
+            <div class="relative flex items-center mb-24">
+                <div class="w-1/2 pr-12 text-right">
+                    <h3 class="text-2xl font-bold mb-4 text-[--color-gold]">SaaS Growth</h3>
+                    <p class="text-gray-300">5+ SaaS platforms fully live by end of 2027</p>
+                </div>
+                <div class="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-[--color-gold] rounded-full border-4 border-black z-10"></div>
+                <div class="w-1/2 pl-12"></div>
+            </div>
+            
+            <!-- Goal 2 -->
+            <div class="relative flex items-center mb-24">
+                <div class="w-1/2 pr-12"></div>
+                <div class="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-[--color-gold] rounded-full border-4 border-black z-10"></div>
+                <div class="w-1/2 pl-12">
+                    <h3 class="text-2xl font-bold mb-4 text-[--color-gold]">Strategic Integrations</h3>
+                    <p class="text-gray-300">Strategic integrations with African Fintech & Telco APIs</p>
+                </div>
+            </div>
+            
+            <!-- Goal 3 -->
+            <div class="relative flex items-center mb-24">
+                <div class="w-1/2 pr-12 text-right">
+                    <h3 class="text-2xl font-bold mb-4 text-[--color-gold]">Partner Ecosystem</h3>
+                    <p class="text-gray-300">Partner ecosystem across real estate, retail, logistics, and healthcare</p>
+                </div>
+                <div class="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-[--color-gold] rounded-full border-4 border-black z-10"></div>
+                <div class="w-1/2 pl-12"></div>
+            </div>
+            
+            <!-- Goal 4 -->
+            <div class="relative flex items-center">
+                <div class="w-1/2 pr-12"></div>
+                <div class="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-[--color-gold] rounded-full border-4 border-black z-10"></div>
+                <div class="w-1/2 pl-12">
+                    <h3 class="text-2xl font-bold mb-4 text-[--color-gold]">Smart Automation</h3>
+                    <p class="text-gray-300">Integrate AI-driven automation and analytics across all SaaS products by 2027</p>
+                </div>
+            </div>
+            <!-- Connecting Lines -->
+            <div class="absolute left-1/2 top-0 h-full w-px bg-[--color-gold] opacity-20"></div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-black/95 text-gray-300 py-12">
+    <div class="container mx-auto px-4">
+        <!-- Navigation Links -->
+        <div class="flex flex-wrap justify-center mb-8 gap-6">
+            <div class="flex flex-wrap justify-center mb-8 gap-6">
+                <a href="{% url 'home' %}" class="hover:text-[--color-gold] transition-colors">Home</a>
+                <a href="{% url 'about' %}" class="hover:text-[--color-gold] transition-colors">About</a>
+                <a href="{% url 'products' %}" class="hover:text-[--color-gold] transition-colors">Products</a>
+                <a href="{% url 'vision' %}" class="hover:text-[--color-gold] transition-colors">Roadmap</a>
+                <a href="{% url 'contact' %}" class="hover:text-[--color-gold] transition-colors">Contact</a>
+            </div>
+        </div>
+
+        <!-- Subscribe Section -->
+        <div class="text-center mb-8">
+            <h3 class="text-2xl font-semibold mb-4">📩 Subscribe for Updates</h3>
+            <form class="max-w-md mx-auto flex gap-2">
+                <input type="email" placeholder="Enter your email" class="flex-1 px-4 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-[--color-gold]">
+                <button type="submit" class="bg-[--color-gold] text-black px-6 py-2 rounded-lg hover:bg-yellow-400 transition-colors font-semibold">Subscribe</button>
+            </form>
+        </div>
+
+        <!-- Legal Links -->
+        <div class="flex justify-center gap-6 mb-6 text-sm">
+            <a href="#privacy" class="hover:text-[--color-gold] transition-colors">🛡️ Privacy Policy</a>
+            <a href="#terms" class="hover:text-[--color-gold] transition-colors">Terms of Service</a>
+        </div>
+
+        <!-- Copyright -->
+        <div class="text-center text-sm text-gray-500">
+            © 2025 Foi Technologies. All rights reserved.
+        </div>
+    </div>
+</footer>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="{% static 'js/about.js' %}"></script>
+{% endblock %}

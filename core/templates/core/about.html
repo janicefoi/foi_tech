@@ -1,0 +1,158 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="min-h-screen flex items-center justify-center relative overflow-hidden hero-section overflow-x-hidden" style="transform-style: preserve-3d;">
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 w-full bg-black/90 backdrop-blur-sm z-50 py-4 px-6 border-b border-gray-800">
+    <div class="container mx-auto flex justify-between items-center">
+        <!-- Logo/Brand -->
+        <a href="#" class="flex items-center gap-3 hover:text-[--color-gold] transition-colors">
+            <img src="{% static 'img/logo.jpeg' %}" alt="Foi Technologies Logo" class="h-16 w-auto">
+            <span class="text-2xl font-bold text-white">Foi Technologies</span>
+        </a>
+
+        <!-- Navigation Links -->
+        <div class="flex items-center gap-6">
+            <a href="{% url 'home' %}" class="text-gray-300 hover:text-[--color-gold] transition-colors">Home</a>
+            <a href="{% url 'products' %}" class="text-gray-300 hover:text-[--color-gold] transition-colors">Products</a>
+            <a href="{% url 'about' %}" class="text-gray-300 hover:text-[--color-gold] transition-colors">About</a>
+            <a href="{% url 'contact' %}" class="text-gray-300 hover:text-[--color-gold] transition-colors">Contact</a>
+            <button class="bg-[--color-gold] text-black px-6 py-2 rounded-full hover:bg-yellow-400 transition-colors font-semibold ml-4">
+                Partner With Us
+            </button>
+        </div>
+    </div>
+</nav>
+    <!-- Background layer -->
+    <div class="absolute inset-0 hero-bg">
+        <div class="absolute inset-0 bg-gradient-to-r from-black via-[--color-gold]/10 to-black animate-gradient"></div>
+        <!-- Replace shapes with tech-themed floating elements -->
+        <div class="tech-elements-container absolute inset-0 pointer-events-none" style="z-index: 1;">
+            <div class="tech-element code-block"></div>
+            <div class="tech-element circuit"></div>
+            <div class="tech-element binary"></div>
+            <div class="tech-element chip"></div>
+        </div>
+    </div>
+    <!-- Content layer with higher z-index -->
+    <div class="container mx-auto px-4 md:px-6 text-center relative max-w-screen-xl" style="z-index: 2;">
+        <h1 class="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-[--color-gold] to-yellow-500" id="heroTitle">
+            💡 Who We Are
+        </h1>
+        <p class="text-2xl md:text-3xl mb-8 max-w-3xl mx-auto text-white" id="heroSubtitle">
+            Foi Technologies is a technology company with a clear mission:
+            To help businesses thrive through smart, intuitive, and accessible software solutions.
+        </p>
+        <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-gray-300">
+            We were founded to challenge the complexity and inefficiency in traditional enterprise software. Our team combines deep domain knowledge with top-tier technical expertise — delivering systems that are beautiful, functional, and built to scale.
+        </p>
+    </div>
+</section>
+
+<!-- What We Do Section -->
+<section class="py-20 bg-black relative">
+    <div class="particle-network"></div>
+    <div class="container mx-auto px-4 relative z-10">
+         <h2 class="text-4xl md:text-5xl font-bold mb-12 text-center">🔍 What We Do</h2>
+        <p class="text-xl md:text-2xl max-w-4xl mx-auto text-gray-300 mb-10 text-center">
+            We design, develop, and deploy SaaS platforms tailored to the operational realities of the industries we serve.
+            Whether you're managing properties, selling goods, tracking logistics, or delivering healthcare — we have tools designed for your business needs.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mt-12">
+            <div class="p-6 rounded-lg bg-[--color-gold] hover:bg-black transition-all duration-300 border border-[--color-gold] group">
+                <h3 class="text-xl font-bold mb-4 text-black group-hover:text-[--color-gold] transition-colors">Build proprietary SaaS platforms</h3>
+            </div>
+            <div class="p-6 rounded-lg bg-[--color-gold] hover:bg-black transition-all duration-300 border border-[--color-gold] group">
+                <h3 class="text-xl font-bold mb-4 text-black group-hover:text-[--color-gold] transition-colors">Offer white-label and co-branded solutions</h3>
+            </div>
+            <div class="p-6 rounded-lg bg-[--color-gold] hover:bg-black transition-all duration-300 border border-[--color-gold] group">
+                <h3 class="text-xl font-bold mb-4 text-black group-hover:text-[--color-gold] transition-colors">Provide integration & automation services</h3>
+            </div>
+            <div class="p-6 rounded-lg bg-[--color-gold] hover:bg-black transition-all duration-300 border border-[--color-gold] group">
+                <h3 class="text-xl font-bold mb-4 text-black group-hover:text-[--color-gold] transition-colors">Explore emerging tech (AI, IoT, blockchain)</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Founder Quote Section -->
+<section class="min-h-screen bg-black/95 relative vision-section flex items-center">
+    <div class="particle-network vision-particles"></div>
+    <div class="container mx-auto px-4 relative z-10 flex items-center justify-between">
+        <div class="w-1/2 text-left pr-12">
+            <blockquote class="text-4xl md:text-5xl font-bold mb-8 text-[--color-gold] leading-tight" data-scroll>
+                "We don't just build software. We engineer impact."
+            </blockquote>
+            <p class="text-xl text-gray-300 mb-10" data-scroll>— Founder, Foi Technologies</p>
+        </div>
+        <div class="w-1/2 pl-8 flex justify-center items-center">
+            <div class="w-[400px] h-[400px] relative overflow-hidden rounded-lg" style="box-shadow: 0 20px 40px -12px rgba(234, 179, 8, 0.25);">
+                <img 
+                    src="/static/img/portrait.jpeg" 
+                    alt="Founder" 
+                    class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
+                    data-scroll
+                >
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Principles Section -->
+<section class="py-20">
+    <div class="container mx-auto px-4 md:px-6 max-w-screen-xl">
+        <h2 class="text-4xl md:text-5xl font-bold mb-12 text-center">Our Principles</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+            {% for principle in principles %}
+            <div class="feature-card p-8 border border-gray-800 rounded-lg hover:border-[--color-gold] transition-all transform hover:shadow-2xl hover:shadow-[--color-gold]/20" style="background: rgba(0,0,0,0.3)">
+                <div class="text-4xl mb-4 transform transition-transform hover:scale-110 duration-300">{{ principle.icon }}</div>
+                <h3 class="text-2xl font-bold mb-4 text-white">{{ principle.title }}</h3>
+                <p class="text-gray-400">{{ principle.description }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-black/95 text-gray-300 py-12">
+    <div class="container mx-auto px-4">
+        <!-- Navigation Links -->
+        <div class="flex flex-wrap justify-center mb-8 gap-6">
+            <a href="{% url 'home' %}" class="hover:text-[--color-gold] transition-colors">Home</a>
+            <a href="{% url 'about' %}" class="hover:text-[--color-gold] transition-colors">About</a>
+            <a href="{% url 'products' %}" class="hover:text-[--color-gold] transition-colors">Products</a>
+            <a href="{% url 'vision' %}" class="hover:text-[--color-gold] transition-colors">Roadmap</a>
+            <a href="{% url 'contact' %}" class="hover:text-[--color-gold] transition-colors">Contact</a>
+        </div>
+
+        <!-- Subscribe Section -->
+        <div class="text-center mb-8">
+            <h3 class="text-2xl font-semibold mb-4">📩 Subscribe for Updates</h3>
+            <form class="max-w-md mx-auto flex gap-2">
+                <input type="email" placeholder="Enter your email" class="flex-1 px-4 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-[--color-gold]">
+                <button type="submit" class="bg-[--color-gold] text-black px-6 py-2 rounded-lg hover:bg-yellow-400 transition-colors font-semibold">Subscribe</button>
+            </form>
+        </div>
+
+        <!-- Legal Links -->
+        <div class="flex justify-center gap-6 mb-6 text-sm">
+            <a href="#privacy" class="hover:text-[--color-gold] transition-colors">🛡️ Privacy Policy</a>
+            <a href="#terms" class="hover:text-[--color-gold] transition-colors">Terms of Service</a>
+        </div>
+
+        <!-- Copyright -->
+        <div class="text-center text-sm text-gray-500">
+            © 2025 Foi Technologies. All rights reserved.
+        </div>
+    </div>
+</footer>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="{% static 'js/about.js' %}"></script>
+{% endblock %}
