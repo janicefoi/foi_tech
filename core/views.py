@@ -10,9 +10,9 @@ def home(request):
             'description': 'We build platforms that address real-world problems — not one-size-fits-all software.'
         },
         {
-            'icon': '⚡',
-            'title': 'Fast & Agile Execution',
-            'description': 'We launch quickly, iterate rapidly, and deliver measurable value in weeks, not months.'
+            'icon': '📈 ',
+            'title': 'Outcome-Driven Delivery',
+            'description': 'Our focus isn’t just speed — it’s delivering tangible business results quickly and continuously.'
         },
         {
             'icon': '🛡️',
