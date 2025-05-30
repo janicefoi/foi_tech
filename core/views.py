@@ -1,6 +1,9 @@
 from django.shortcuts import render, redirect
 from django.core.mail import send_mail
 from django.contrib import messages
+from django.http import HttpResponse
+from django.template import loader
+
 
 def home(request):
     features = [
@@ -95,3 +98,7 @@ def contact(request):
             messages.error(request, 'There was an error sending your message. Please try again.')
             
     return render(request, 'core/contact.html')
+    
+def robots_txt(request):
+    template = loader.get_template('robots.txt')
+    return HttpResponse(template.render(), content_type="text/plain")
