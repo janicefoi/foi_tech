@@ -49,7 +49,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',  # Add this line
-    'django.contrib.sitemaps',
 ]
 
 MIDDLEWARE = [
