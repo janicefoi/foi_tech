@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.core.mail import send_mail
 from django.contrib import messages
+from django.core.mail import EmailMessage
 
 def home(request):
     features = [
@@ -69,29 +70,38 @@ def products(request):
 def vision(request):
     return render(request, 'core/vision.html')
 
+
 def contact(request):
     if request.method == 'POST':
         name = request.POST.get('name')
         company = request.POST.get('company')
-        email = request.POST.get('email')
+        email = request.POST.get('email')  # Visitor's email
         message = request.POST.get('message')
-        
-        # Email subject and message
+
         subject = f'New Contact Form Submission from {name} - {company}'
-        email_message = f"Name: {name}\nCompany: {company}\nEmail: {email}\n\nMessage:\n{message}"
-        
+        email_message = f"""
+        You received a new message from your website contact form.
+
+        Name: {name}
+        Company: {company}
+        Email: {email}
+
+        Message:
+        {message}
+        """
+
         try:
-            # Send email
-            send_mail(
-                subject,
-                email_message,
-                email,  # From email
-                ['contact@foitechnologies.com'],  # To email
-                fail_silently=False,
+            email_obj = EmailMessage(
+                subject=subject,
+                body=email_message,
+                from_email='contact@foitechnologies.com',  # ✅ Authenticated sender
+                to=['contact@foitechnologies.com'],         # ✅ Sent to your inbox
+                reply_to=[email],                           # ✅ Allows you to reply to the user
             )
+            email_obj.send(fail_silently=False)
             messages.success(request, 'Your message has been sent successfully!')
             return redirect('contact')
         except Exception as e:
-            messages.error(request, 'There was an error sending your message. Please try again.')
-            
+            messages.error(request, f'There was an error sending your message: {str(e)}')
+
     return render(request, 'core/contact.html')
