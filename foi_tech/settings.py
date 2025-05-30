@@ -33,8 +33,7 @@ RENDER = os.environ.get('RENDER') == 'true'
 
 
 ALLOWED_HOSTS = ['foitechnologies.com', 'www.foitechnologies.com', 'foi-tech.onrender.com']
-
-
+ADMINS = [('Janice', 'janicejuniour@gmail.com')]
 
 
 
