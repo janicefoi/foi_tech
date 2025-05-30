@@ -1,7 +1,4 @@
 User-agent: *
-Allow: /
-Disallow: /admin/
-Disallow: /private/
-Disallow: /tmp/
+Disallow:
 
 Sitemap: https://foitechnologies.com/sitemap.xml
