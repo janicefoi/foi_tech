@@ -86,7 +86,7 @@ def contact(request):
                 subject,
                 email_message,
                 email,  # From email
-                ['contact@foitechnologies.com'],  # Replace with your company email
+                ['contact@foitechnologies.com'],  # To email
                 fail_silently=False,
             )
             messages.success(request, 'Your message has been sent successfully!')

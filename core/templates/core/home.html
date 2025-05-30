@@ -51,7 +51,7 @@
             Empowering Businesses with Smart Tech Solutions
         </h1>
         <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto" id="heroSubtitle">
-            Foi Technologies is a forward-thinking technology company building intelligent, scalable, and industry-defining SaaS platforms.
+            Foi Technologies is a forward-thinking technology company building intelligent, scalable, and industry-defining Software As A Service (SaaS) platforms.
             From real estate to retail, we create purpose-built systems that automate, optimize, and unlock business growth.
         </p>
         <div class="flex flex-wrap justify-center gap-4" id="heroCTA">
@@ -69,24 +69,33 @@
 </section>
 
 <!-- Vision Statement -->
-<section class="min-h-screen bg-black/95 relative vision-section flex items-center">
+<section class="min-h-screen bg-black/95 relative vision-section flex items-center py-20">
     <div class="particle-network vision-particles"></div>
-    <div class="container mx-auto px-4 relative z-10 flex items-center justify-between">
-        <div class="w-1/2 text-left">
-            <h2 class="text-4xl md:text-5xl font-bold mb-8 text-[--color-gold]" data-scroll>
-                Our Vision
-            </h2>
-            <p class="text-xl md:text-2xl max-w-4xl text-gray-300 mb-10" data-scroll>
-                To become a leading global hub for Software As A Service (SaaS) innovation — empowering businesses with accessible, intelligent, and integrated software ecosystems.
-            </p>
-            <div data-scroll>
-                <a href="{% url 'vision' %}" class="bg-[--color-gold] text-black px-8 py-3 rounded-full hover:bg-yellow-400 transition-colors font-semibold hover:scale-105 inline-block">
-                    Explore Our Vision
-                </a>
+    <div class="container mx-auto px-4 relative z-10">
+        <div class="flex flex-col md:flex-row items-center gap-12">
+            <div class="w-full md:w-1/2 text-center md:text-left">
+                <h2 class="text-4xl md:text-5xl font-bold mb-8 text-[--color-gold]" data-scroll>
+                    Our Vision
+                </h2>
+                <p class="text-xl md:text-2xl max-w-4xl text-gray-300 mb-10" data-scroll>
+                    To become a leading global hub for Software As A Service (SaaS) innovation — empowering businesses with accessible, intelligent, and integrated software ecosystems.
+                </p>
+                <div data-scroll>
+                    <a href="{% url 'vision' %}" class="bg-[--color-gold] text-black px-8 py-3 rounded-full hover:bg-yellow-400 transition-colors font-semibold hover:scale-105 inline-block">
+                        Explore Our Vision
+                    </a>
+                </div>
             </div>
-        </div>
-        <div class="w-1/2 pl-8">
-            <img src="/static/img/vision.jpg" alt="Vision" class="w-full rounded-lg shadow-2xl" data-scroll>
+            <div class="w-full md:w-1/2">
+                <div class="relative overflow-hidden rounded-lg shadow-2xl aspect-video md:aspect-square">
+                    <img 
+                        src="/static/img/vision.jpg" 
+                        alt="Vision" 
+                        class="w-full h-full object-cover transform hover:scale-105 transition-duration-500"
+                        data-scroll
+                    >
+                </div>
+            </div>
         </div>
     </div>
 </section>
