@@ -99,6 +99,6 @@ def contact(request):
             
     return render(request, 'core/contact.html')
     
-def robots_txt(request):
+def robots_txt(_):
     template = loader.get_template('robots.txt')
     return HttpResponse(template.render(), content_type="text/plain")

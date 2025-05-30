@@ -22,9 +22,11 @@ from django.contrib import sitemaps
 from django.contrib.sitemaps.views import sitemap
 from core.sitemaps import StaticViewSitemap 
 
+
 sitemaps_dict = {
     'static': StaticViewSitemap,
 }
+
 
 
 urlpatterns = [

@@ -8,4 +8,6 @@ urlpatterns = [
     path('vision/', views.vision, name='vision'),
     path('contact/', views.contact, name='contact'),
     path("robots.txt", views.robots_txt, name="robots_txt"),
+    # Add to your views.py first, then update urls.py if needed
+    path('canonical/', views.canonical, name='canonical'),
 ]
